@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FizzBuzz</title>
+  </head>
+  <body>
+    <h1>Get FizzBuzz Result!</h1>
+    <form
+      class="formnumber"
+      name="form-number"
+      onsubmit="return validateform()"
+    >
+      <label class="number">Type a number :</label>
+      <input
+        id="number-type"
+        name="numbers"
+        placeholder="Input your number"
+        type="text"
+      />
+      <input id="button" type="submit" name="btn" value="Click here!" />
+    </form>
+    <hr />
+    <p><span id="buzz"></span></p>
+    <p><span id="fizz"></span></p>
+    <p><span id="fizzbuzz"></span></p>
+    <p><span id="other"></span></p>
+
+    <script>
+      function validateform() {
+        const number = document.getElementById("number-type").value;
+
+        for (let i = 1; i <= 100; index++) {
+          if (number == 0 || number > 100) {
+            document.getElementById("other").innerHTML = "invalid input";
+            document.getElementById("other").style.color = "red";
+            console.log(number);
+          } else if (number % 3 === 0 && number % 5 === 0) {
+            document.getElementById("fizzbuzz").innerHTML = "Fizzbuzz!";
+            console.log(number);
+          } else if (number % 3 === 0) {
+            document.getElementById("fizz").innerHTML = "Fizz!";
+            console.log(number);
+          } else if (number % 5 === 0) {
+            document.getElementById("buzz").innerHTML = "Buzz!";
+            console.log(number);
+          } else {
+            document.getElementById("other").innerHTML = number;
+            document.getElementById("other").style.color = "black";
+            console.log(number);
+          }
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
